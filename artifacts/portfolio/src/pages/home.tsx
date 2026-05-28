@@ -81,27 +81,27 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-primary">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 px-6 py-5 flex justify-between items-center backdrop-blur-md bg-background/70 border-b border-border/30">
-        <div className="font-mono text-sm font-bold tracking-widest uppercase text-primary">Mary Kisaka</div>
+      <nav className="fixed top-0 w-full z-50 px-6 py-5 flex justify-between items-center backdrop-blur-md border-b border-white/10" style={{ background: "hsl(227 84% 17% / 0.97)" }}>
+        <div className="font-mono text-sm font-bold tracking-widest uppercase" style={{ color: "#00b4d8" }}>Mary Kisaka</div>
         <div className="flex gap-8 font-mono text-xs">
-          <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a>
-          <a href="#skills" className="text-muted-foreground hover:text-primary transition-colors">Skills</a>
-          <a href="#projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</a>
-          <a href="#experience" className="text-muted-foreground hover:text-primary transition-colors">Experience</a>
-          <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
+          <a href="#about" className="text-white/60 hover:text-white transition-colors">About</a>
+          <a href="#skills" className="text-white/60 hover:text-white transition-colors">Skills</a>
+          <a href="#projects" className="text-white/60 hover:text-white transition-colors">Projects</a>
+          <a href="#experience" className="text-white/60 hover:text-white transition-colors">Experience</a>
+          <a href="#contact" className="text-white/60 hover:text-white transition-colors">Contact</a>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[100dvh] flex flex-col justify-end px-6 md:px-24 pb-24 overflow-hidden">
+      <section className="relative min-h-[100dvh] flex flex-col justify-end px-6 md:px-24 pb-24 overflow-hidden" style={{ background: "hsl(227 84% 17%)" }}>
         <div className="absolute inset-0 z-0">
           <img
             src="/hero-bg.png"
             alt="Nairobi county road network GIS map"
-            className="w-full h-full object-cover object-center opacity-35"
+            className="w-full h-full object-cover object-center opacity-50"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/40 z-10" />
+          <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(to top, hsl(227 84% 17%) 20%, hsl(227 84% 17% / 0.5) 60%, hsl(227 84% 17% / 0.15) 100%)" }} />
+          <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(to right, hsl(227 84% 17% / 0.85) 0%, transparent 60%)" }} />
         </div>
 
         <div className="relative z-30 max-w-5xl">
@@ -111,18 +111,18 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="h-[1px] w-12 bg-primary" />
-            <span className="font-mono text-primary text-sm tracking-wider uppercase">GIS Developer & Geospatial Engineer</span>
+            <div className="h-[1px] w-12" style={{ background: "#00b4d8" }} />
+            <span className="font-mono text-sm tracking-wider uppercase" style={{ color: "#00b4d8" }}>GIS Developer & Geospatial Engineer</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-8xl font-bold tracking-tight mb-6 leading-[1.08]"
+            className="text-5xl md:text-8xl font-bold tracking-tight mb-6 leading-[1.08] text-white"
           >
             Mapping the <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-secondary">Energy Transition</span><br />
+            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(to right, #00b4d8, #90e0ef, #086bd1)" }}>Energy Transition</span><br />
             Across Africa.
           </motion.h1>
 
@@ -130,9 +130,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl font-light mb-6"
+            className="text-lg md:text-xl max-w-2xl font-light mb-6 text-white/70"
           >
-            I am <strong className="text-foreground font-semibold">Mary Kisaka</strong> — a GIS developer who writes code as fluently as she reads satellite imagery. I build the platforms and spatial tools that governments and international organisations use to track electrification, model climate risk, and drive evidence-based decisions across Sub-Saharan Africa.
+            I am <strong className="text-white font-semibold">Mary Kisaka</strong> — a GIS developer who writes code as fluently as she reads satellite imagery. I build the platforms and spatial tools that governments and international organisations use to track electrification, model climate risk, and drive evidence-based decisions across Sub-Saharan Africa.
           </motion.p>
 
           {/* Domain tags */}
@@ -143,7 +143,7 @@ export default function Home() {
             className="flex flex-wrap gap-2 mb-10"
           >
             {domains.map(d => (
-              <span key={d} className="font-mono text-xs px-3 py-1.5 rounded-full border border-primary/40 text-primary bg-primary/10">
+              <span key={d} className="font-mono text-xs px-3 py-1.5 rounded-full text-white/80" style={{ border: "1px solid rgba(0,180,216,0.4)", background: "rgba(0,180,216,0.12)" }}>
                 {d}
               </span>
             ))}
@@ -157,7 +157,10 @@ export default function Home() {
           >
             <a
               href="#projects"
-              className="group flex items-center gap-3 font-mono text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-4 rounded-sm hover:bg-primary/85 transition-all"
+              className="group flex items-center gap-3 font-mono text-sm uppercase tracking-wider text-white px-8 py-4 rounded-sm transition-all"
+              style={{ background: "#00b4d8" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "#00a0c0")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#00b4d8")}
             >
               Explore Work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -165,7 +168,8 @@ export default function Home() {
             <a
               href="/Mary_Kisaka_CV.docx"
               download
-              className="group flex items-center gap-3 font-mono text-sm uppercase tracking-wider border border-border text-muted-foreground px-8 py-4 rounded-sm hover:border-primary/60 hover:text-primary transition-all"
+              className="group flex items-center gap-3 font-mono text-sm uppercase tracking-wider text-white/70 px-8 py-4 rounded-sm hover:text-white transition-all"
+              style={{ border: "1px solid rgba(255,255,255,0.25)" }}
             >
               <Download className="w-4 h-4" />
               Download CV
@@ -176,17 +180,17 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex gap-6 mt-8 font-mono text-xs text-muted-foreground"
+            className="flex gap-6 mt-8 font-mono text-xs text-white/50"
           >
-            <span className="flex items-center gap-2"><Map className="w-3 h-3 text-secondary" /> Nairobi, Kenya</span>
-            <span className="flex items-center gap-2"><Globe2 className="w-3 h-3 text-secondary" /> 12+ Countries</span>
+            <span className="flex items-center gap-2"><Map className="w-3 h-3" style={{ color: "#00b4d8" }} /> Nairobi, Kenya</span>
+            <span className="flex items-center gap-2"><Globe2 className="w-3 h-3" style={{ color: "#00b4d8" }} /> 12+ Countries</span>
             <a
               href="https://www.linkedin.com/in/mary-kisaka/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Linkedin className="w-3 h-3 text-secondary" /> LinkedIn
+              <Linkedin className="w-3 h-3" style={{ color: "#00b4d8" }} /> LinkedIn
             </a>
           </motion.div>
         </div>
@@ -540,17 +544,18 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 md:px-24 border-t border-border/50 bg-card/40">
+      <section id="contact" className="py-24 px-6 md:px-24" style={{ background: "hsl(227 84% 17%)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <motion.div {...fadeInUp}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Get in Touch</h2>
-            <p className="text-muted-foreground font-mono text-sm mb-12 max-w-xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Get in Touch</h2>
+            <p className="font-mono text-sm mb-12 max-w-xl mx-auto text-white/60">
               Open to GIS developer roles, remote sensing projects, and energy access consultancies. Based in Nairobi, Kenya — available for remote and field-based engagements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:mkisaka@eedadvisory.com"
-                className="group flex items-center justify-center gap-3 font-mono text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-4 rounded-sm hover:bg-primary/85 transition-all"
+                className="group flex items-center justify-center gap-3 font-mono text-sm uppercase tracking-wider text-white px-8 py-4 rounded-sm transition-all"
+                style={{ background: "#00b4d8" }}
               >
                 <Mail className="w-4 h-4" />
                 Send Email
@@ -559,7 +564,8 @@ export default function Home() {
                 href="https://www.linkedin.com/in/mary-kisaka/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 font-mono text-sm uppercase tracking-wider border border-border text-muted-foreground px-8 py-4 rounded-sm hover:border-primary/60 hover:text-primary transition-all"
+                className="group flex items-center justify-center gap-3 font-mono text-sm uppercase tracking-wider text-white/70 px-8 py-4 rounded-sm hover:text-white transition-all"
+                style={{ border: "1px solid rgba(255,255,255,0.25)" }}
               >
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
@@ -567,7 +573,8 @@ export default function Home() {
               <a
                 href="/Mary_Kisaka_CV.docx"
                 download
-                className="group flex items-center justify-center gap-3 font-mono text-sm uppercase tracking-wider border border-border text-muted-foreground px-8 py-4 rounded-sm hover:border-secondary/60 hover:text-secondary transition-all"
+                className="group flex items-center justify-center gap-3 font-mono text-sm uppercase tracking-wider text-white/70 px-8 py-4 rounded-sm hover:text-white transition-all"
+                style={{ border: "1px solid rgba(255,255,255,0.25)" }}
               >
                 <Download className="w-4 h-4" />
                 Download CV
@@ -578,15 +585,15 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 md:px-24 border-t border-border bg-background">
+      <footer className="py-8 px-6 md:px-24" style={{ background: "hsl(227 84% 12%)", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="font-mono text-sm font-bold tracking-widest uppercase text-primary">
+          <div className="font-mono text-sm font-bold tracking-widest uppercase" style={{ color: "#00b4d8" }}>
             Mary Kisaka
           </div>
           <div className="flex items-center gap-6">
             <a
               href="mailto:mkisaka@eedadvisory.com"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs"
+              className="flex items-center gap-2 text-white/50 hover:text-white transition-colors font-mono text-xs"
             >
               <Mail className="w-3.5 h-3.5" /> mkisaka@eedadvisory.com
             </a>
@@ -594,12 +601,12 @@ export default function Home() {
               href="https://www.linkedin.com/in/mary-kisaka/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs"
+              className="flex items-center gap-2 text-white/50 hover:text-white transition-colors font-mono text-xs"
             >
               <Linkedin className="w-3.5 h-3.5" /> LinkedIn
             </a>
           </div>
-          <div className="font-mono text-xs text-muted-foreground">
+          <div className="font-mono text-xs text-white/30">
             Nairobi, Kenya · 2025
           </div>
         </div>

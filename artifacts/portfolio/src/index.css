@@ -52,79 +52,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  /* Blue palette: #071a52 → #086bd1 → #00b4d8 → #90e0ef → #caf0f8 */
-  --background: 227 84% 17%;       /* #071a52 deep navy */
-  --foreground: 210 30% 97%;
+  /* Light page theme — dark navy headers/footers, white content */
+  --background: 0 0% 100%;            /* white */
+  --foreground: 227 60% 18%;          /* dark navy text */
 
-  --card: 225 60% 22%;             /* slightly lighter navy */
-  --card-foreground: 210 30% 97%;
-  --card-border: 224 45% 30%;
+  --card: 213 50% 97%;                /* very light blue-white */
+  --card-foreground: 227 60% 18%;
+  --card-border: 213 30% 87%;
 
-  --sidebar: 225 60% 22%;
-  --sidebar-foreground: 210 30% 97%;
-  --sidebar-border: 224 45% 30%;
-  --sidebar-primary: 193 100% 42%;
-  --sidebar-primary-foreground: 227 84% 17%;
-  --sidebar-accent: 225 50% 27%;
-  --sidebar-accent-foreground: 210 30% 97%;
-  --sidebar-ring: 193 100% 42%;
+  --sidebar: 213 50% 97%;
+  --sidebar-foreground: 227 60% 18%;
+  --sidebar-border: 213 30% 87%;
+  --sidebar-primary: 193 100% 35%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 213 40% 93%;
+  --sidebar-accent-foreground: 227 60% 18%;
+  --sidebar-ring: 193 100% 35%;
 
-  --popover: 225 60% 22%;
-  --popover-foreground: 210 30% 97%;
-  --popover-border: 224 45% 30%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 227 60% 18%;
+  --popover-border: 213 30% 87%;
 
-  --primary: 193 100% 42%;         /* #00b4d8 vivid cyan */
-  --primary-foreground: 227 84% 10%;
+  --primary: 193 100% 35%;            /* deeper cyan for white-bg contrast */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 211 94% 43%;        /* #086bd1 royal blue */
-  --secondary-foreground: 210 30% 97%;
+  --secondary: 211 94% 40%;           /* royal blue */
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 225 50% 27%;
-  --muted-foreground: 210 22% 75%;
+  --muted: 213 40% 94%;
+  --muted-foreground: 213 30% 42%;
 
-  --accent: 193 100% 42%;
-  --accent-foreground: 227 84% 10%;
+  --accent: 193 100% 35%;
+  --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 30% 97%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 224 45% 30%;
-  --input: 224 45% 30%;
-  --ring: 193 100% 42%;
+  --border: 213 30% 87%;
+  --input: 213 30% 87%;
+  --ring: 193 100% 35%;
 
-  --chart-1: 193 100% 42%;
-  --chart-2: 211 94% 43%;
-  --chart-3: 193 75% 75%;
-  --chart-4: 210 22% 75%;
-  --chart-5: 224 45% 30%;
+  --chart-1: 193 100% 35%;
+  --chart-2: 211 94% 40%;
+  --chart-3: 227 84% 17%;
+  --chart-4: 213 30% 42%;
+  --chart-5: 213 30% 87%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0.5rem;
 
-  --button-outline: rgba(255,255,255, .10);
-  --badge-outline: rgba(255,255,255, .05);
+  --button-outline: rgba(0,0,0,.08);
+  --badge-outline: rgba(0,0,0,.05);
   --opaque-button-border-intensity: -8;
 
-  --elevate-1: rgba(255,255,255, .05);
-  --elevate-2: rgba(255,255,255, .10);
+  --elevate-1: rgba(0,0,0,.04);
+  --elevate-2: rgba(0,0,0,.07);
 
-  --shadow-2xs: 0px 2px 0px 0px rgba(0,0,0,0.5);
-  --shadow-xs: 0px 2px 0px 0px rgba(0,0,0,0.5);
-  --shadow-sm: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 1px 2px -1px rgba(0,0,0,0.5);
-  --shadow: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 1px 2px -1px rgba(0,0,0,0.5);
-  --shadow-md: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 2px 4px -1px rgba(0,0,0,0.5);
-  --shadow-lg: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 4px 6px -1px rgba(0,0,0,0.5);
-  --shadow-xl: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 8px 10px -1px rgba(0,0,0,0.5);
-  --shadow-2xl: 0px 2px 0px 0px rgba(0,0,0,0.5);
+  --shadow-2xs: 0px 1px 2px 0px rgba(0,0,0,0.08);
+  --shadow-xs: 0px 1px 3px 0px rgba(0,0,0,0.10);
+  --shadow-sm: 0px 1px 3px 0px rgba(0,0,0,0.10), 0px 1px 2px -1px rgba(0,0,0,0.06);
+  --shadow: 0px 1px 3px 0px rgba(0,0,0,0.10), 0px 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-md: 0px 4px 6px -1px rgba(0,0,0,0.10), 0px 2px 4px -2px rgba(0,0,0,0.06);
+  --shadow-lg: 0px 10px 15px -3px rgba(0,0,0,0.10), 0px 4px 6px -4px rgba(0,0,0,0.06);
+  --shadow-xl: 0px 20px 25px -5px rgba(0,0,0,0.10), 0px 8px 10px -6px rgba(0,0,0,0.06);
+  --shadow-2xl: 0px 25px 50px -12px rgba(0,0,0,0.25);
 
   --tracking-normal: 0em;
   --spacing: 0.25rem;
-}
-
-.dark {
-  /* Same as root — defaulting to this dark blue theme */
 }
 
 @layer base {
