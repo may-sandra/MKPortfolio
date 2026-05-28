@@ -21,6 +21,14 @@ export default function Home() {
 
   const otherProjects = [
     {
+      title: "DREEM Impact Tracking Platform",
+      client: "Mott Foundation",
+      year: "2024–2025",
+      desc: "Built a multi-tab Power BI dashboard tracking fellows' contributions to local organisations, proposals submitted, technical assistance levels, and sector-level breakdowns. Covers 10 organisations across Kenya, Uganda, and Tanzania.",
+      tags: ["Power BI", "Kenya", "Uganda", "Tanzania"],
+      image: "/dreem-dashboard.png"
+    },
+    {
       title: "SDG 7.1.1 Energy Access Tracking",
       client: "University of Oxford / CCG",
       year: "2025–2026",
@@ -302,24 +310,13 @@ export default function Home() {
           <div className="space-y-24">
             {/* Project 1 — UNICEF Somalia WASH */}
             <motion.div {...fadeInUp} className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden flex items-center justify-center p-8 group-hover:border-primary/40 transition-colors">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/8 to-secondary/5 group-hover:from-primary/15 transition-colors duration-500" />
-                <div className="relative w-full h-full border border-primary/20 rounded-lg flex flex-col gap-3 p-4">
-                  <div className="h-6 border-b border-primary/20 flex items-center px-2 gap-2">
-                    <div className="w-2 h-2 rounded-full bg-primary/70" />
-                    <div className="w-2 h-2 rounded-full bg-secondary/70" />
-                    <div className="font-mono text-[9px] text-muted-foreground ml-2">WASH Severity Index — Somalia</div>
-                  </div>
-                  <div className="flex-1 grid grid-cols-5 grid-rows-4 gap-1.5 p-2">
-                    {[70,30,85,40,60, 90,20,75,50,35, 45,80,25,65,88, 55,40,70,30,95].map((v, i) => (
-                      <div key={i} className="rounded-sm" style={{ background: `hsl(174 100% 50% / ${v / 100 * 0.5})`, border: '1px solid hsl(174 100% 50% / 0.1)' }} />
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-2 px-2">
-                    <div className="h-2 flex-1 rounded bg-gradient-to-r from-primary/10 via-primary/40 to-primary/80" />
-                    <div className="font-mono text-[8px] text-muted-foreground">Low → High Need</div>
-                  </div>
-                </div>
+              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden group-hover:border-primary/40 transition-colors">
+                <img
+                  src="/unicef-wash.png"
+                  alt="UNICEF WASH Vulnerability Monitoring System — Somalia dashboard screenshot"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
               </div>
               <div className="lg:col-span-5 lg:-ml-12 z-10">
                 <div className="bg-background/95 backdrop-blur-md border border-border p-8 rounded-xl shadow-2xl group-hover:border-primary/30 transition-colors">
@@ -349,37 +346,29 @@ export default function Home() {
                   <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
                     Designed and developed a web-based platform to visualise and communicate minimum data requirements for Kenya's Integrated National Energy Plan (INEP) and County Energy Plans (CEPs). Conducted literature reviews informing energy systems planning approaches, supported stakeholder engagement, and contributed to technical reporting and deliverables. Role: GIS Developer.
                   </p>
-                  <div className="flex flex-wrap gap-2 font-mono text-[10px]">
+                  <div className="flex flex-wrap gap-2 font-mono text-[10px] mb-5">
                     <span className="px-2 py-1 bg-secondary/10 text-secondary rounded border border-secondary/20">GIS Developer</span>
                     <span className="px-2 py-1 bg-card text-muted-foreground rounded">Web Platform</span>
                     <span className="px-2 py-1 bg-card text-muted-foreground rounded">Energy Planning</span>
                     <span className="px-2 py-1 bg-card text-muted-foreground rounded">Kenya</span>
                   </div>
+                  <a
+                    href="https://energyatlas.africa/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-mono text-xs text-secondary hover:text-secondary/80 transition-colors border border-secondary/30 px-4 py-2 rounded hover:border-secondary/60"
+                  >
+                    <Globe2 className="w-3.5 h-3.5" /> View Live Platform →
+                  </a>
                 </div>
               </div>
-              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden flex items-center justify-center p-8 order-1 lg:order-2 group-hover:border-secondary/40 transition-colors">
-                <div className="absolute inset-0 bg-gradient-to-tl from-secondary/8 to-transparent group-hover:from-secondary/15 transition-colors duration-500" />
-                <div className="relative w-full h-full border border-secondary/20 rounded-lg flex gap-4 p-4">
-                  <div className="w-1/5 h-full bg-background/50 rounded flex flex-col gap-2 p-2 border border-secondary/10">
-                    {["INEP", "CEPs", "Demand", "Supply", "Grid"].map(item => (
-                      <div key={item} className="h-7 bg-secondary/15 rounded flex items-center px-2">
-                        <div className="font-mono text-[8px] text-secondary/70">{item}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex-1 h-full flex flex-col gap-3">
-                    <div className="h-8 bg-secondary/10 rounded border border-secondary/15 flex items-center px-3">
-                      <div className="font-mono text-[8px] text-secondary/60">Kenya Energy Data Visualisation</div>
-                    </div>
-                    <div className="flex-1 bg-secondary/5 rounded border border-secondary/15 grid grid-cols-3 gap-2 p-3">
-                      <div className="col-span-2 bg-secondary/10 rounded" />
-                      <div className="flex flex-col gap-2">
-                        <div className="flex-1 bg-secondary/15 rounded" />
-                        <div className="flex-1 bg-secondary/8 rounded" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden order-1 lg:order-2 group-hover:border-secondary/40 transition-colors">
+                <img
+                  src="/ripples-platform.png"
+                  alt="RIPPLES Integrated Energy Planning Data Platform screenshot"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
               </div>
             </motion.div>
 
@@ -490,18 +479,30 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="bg-background border border-border p-6 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5 flex flex-col group"
+                className="bg-background border border-border rounded-lg hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5 flex flex-col group overflow-hidden"
               >
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <div className="font-mono text-[10px] text-primary uppercase tracking-wide">{p.client}</div>
-                  <div className="font-mono text-[10px] text-muted-foreground shrink-0">{p.year}</div>
-                </div>
-                <h4 className="text-base font-bold mb-3 group-hover:text-primary transition-colors">{p.title}</h4>
-                <p className="text-sm text-muted-foreground mb-6 flex-1 leading-relaxed">{p.desc}</p>
-                <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
-                  {p.tags.map(t => (
-                    <span key={t} className="px-2 py-1 bg-card rounded text-muted-foreground border border-border/60">{t}</span>
-                  ))}
+                {"image" in p && p.image && (
+                  <div className="relative h-40 overflow-hidden border-b border-border/60">
+                    <img
+                      src={p.image as string}
+                      alt={p.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                  </div>
+                )}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <div className="font-mono text-[10px] text-primary uppercase tracking-wide">{p.client}</div>
+                    <div className="font-mono text-[10px] text-muted-foreground shrink-0">{p.year}</div>
+                  </div>
+                  <h4 className="text-base font-bold mb-3 group-hover:text-primary transition-colors">{p.title}</h4>
+                  <p className="text-sm text-muted-foreground mb-6 flex-1 leading-relaxed">{p.desc}</p>
+                  <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                    {p.tags.map(t => (
+                      <span key={t} className="px-2 py-1 bg-card rounded text-muted-foreground border border-border/60">{t}</span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}

@@ -72,14 +72,14 @@
   --popover-foreground: 210 30% 97%;
   --popover-border: 220 35% 22%;
 
-  --primary: 174 100% 50%; /* Vivid electric teal */
-  --primary-foreground: 220 40% 9%;
+  --primary: 174 100% 56%; /* Vivid electric teal */
+  --primary-foreground: 220 40% 8%;
 
-  --secondary: 35 100% 62%; /* Bright warm amber */
-  --secondary-foreground: 220 40% 9%;
+  --secondary: 35 100% 66%; /* Bright warm amber */
+  --secondary-foreground: 220 40% 8%;
 
   --muted: 220 35% 18%;
-  --muted-foreground: 215 18% 74%;
+  --muted-foreground: 215 18% 78%;
 
   --accent: 174 100% 50%;
   --accent-foreground: 220 40% 9%;
