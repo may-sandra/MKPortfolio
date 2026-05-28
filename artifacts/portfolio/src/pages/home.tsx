@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Map, Globe2, Layers, Briefcase, Mail, Cpu, LineChart, Code, BarChart2, TrendingUp, Compass, Download, Linkedin } from "lucide-react";
 import { SiPython, SiJavascript, SiReact, SiPostgresql, SiGoogle } from "react-icons/si";
 
@@ -19,64 +20,80 @@ export default function Home() {
 
   const domains = ["Energy Access", "WASH", "Geospatial", "Climate Change"];
 
+  const FILTER_TAGS = ["All", "Energy", "WASH", "Geospatial", "Climate Change"] as const;
+  type FilterTag = typeof FILTER_TAGS[number];
+  const [activeFilter, setActiveFilter] = useState<FilterTag>("All");
+
   const otherProjects = [
     {
       title: "SDG 7.1.1 Energy Access Tracking",
       client: "University of Oxford / CCG",
       year: "2025–2026",
       desc: "Coordinated data collection across 43 Sub-Saharan African countries to address critical gaps in tracking progress toward affordable, reliable, and modern energy access. Conducted data analysis and produced visualisations synthesising findings across countries.",
-      tags: ["43 SSA Countries", "Data Analysis", "Visualisation"]
+      tags: ["43 SSA Countries", "Data Analysis", "Visualisation"],
+      domains: ["Energy"]
     },
     {
       title: "AIRTEA Mobile GIS Crop Diagnostics",
       client: "FARA / Kenyatta University",
       year: "2022–2023",
       desc: "Developed CNN-based image recognition algorithms for land use/land cover monitoring, volumetric soil moisture using SAR (Sentinel-1), and urban heat assessment using Google Earth Engine Python and JavaScript APIs. Built a mobile GIS application for crop diagnostics.",
-      tags: ["CNN", "Sentinel-1 SAR", "GEE", "Machine Learning"]
+      tags: ["CNN", "Sentinel-1 SAR", "GEE", "Machine Learning"],
+      domains: ["Geospatial", "Climate Change"]
     },
     {
       title: "Electricity Demand Estimation — ML",
       client: "EED Advisory (Internal)",
       year: "2023",
       desc: "Spatial methodology for electricity demand estimation using Random Forest regression in Google Earth Engine, integrating global electrification data, population density, and LULC data. Benchmarked against ONSSET tool results.",
-      tags: ["Random Forest", "GEE", "Kenya"]
+      tags: ["Random Forest", "GEE", "Kenya"],
+      domains: ["Energy", "Geospatial"]
     },
     {
       title: "Malawi National Clean Cooking Strategy",
       client: "African Development Bank",
       year: "2025",
       desc: "Aggregated high-resolution population data, applied spatial weighting via road proximity buffers, and conducted hotspot prioritisation for e-cooking by combining population density, infrastructure proximity, and settlement clustering. Produced thematic maps of LPG demand hotspots.",
-      tags: ["Hotspot Analysis", "Spatial Weighting", "Malawi"]
+      tags: ["Hotspot Analysis", "Spatial Weighting", "Malawi"],
+      domains: ["Energy"]
     },
     {
       title: "National LPG Master Plan",
       client: "FUNAE, Mozambique",
       year: "2024–2026",
       desc: "Spatial mapping and network analysis of petrol station infrastructure including 5 km service area buffers. Developed composite LPG readiness scores and population proxy indices to evaluate accessibility and compare network performance across operators.",
-      tags: ["Network Analysis", "Composite Indices", "Mozambique"]
+      tags: ["Network Analysis", "Composite Indices", "Mozambique"],
+      domains: ["Energy", "Geospatial"]
     },
     {
       title: "Kenya Agriculture Crop Insurance Atlas",
       client: "Ministry of Agriculture, Kenya",
       year: "2022",
       desc: "Developed spatial datasets and insurance unit databases for 36 counties. Created a national georeferenced atlas using Google Earth Engine and field validation with sub-county agriculture officers. Established land cover extents for all insurance units.",
-      tags: ["36 Counties", "Cartography", "GEE"]
+      tags: ["36 Counties", "Cartography", "GEE"],
+      domains: ["Geospatial"]
     },
     {
       title: "Climate-Smart WASH Lending",
       client: "Aqua for All / Sidian Bank",
       year: "2024",
       desc: "Conducted hazard mapping identifying flood, drought, and sea-level rise risks using historical climate data, satellite imagery, and GIS layers. Assessed exposure of WASH infrastructure by overlaying climate hazard data with population density, settlement patterns, and infrastructure locations.",
-      tags: ["Hazard Mapping", "Risk Analysis", "Kenya"]
+      tags: ["Hazard Mapping", "Risk Analysis", "Kenya"],
+      domains: ["WASH", "Climate Change"]
     },
     {
       title: "World Bank Energy Surveys",
       client: "The World Bank Group",
       year: "2024–2025",
       desc: "GIS database preparation and sampling strategy design for Multi-Tier Framework (MTF) energy access surveys in Namibia, Somalia, Ethiopia, Liberia, and Nigeria covering over 12,000 households. Designed CAPI interfaces and led data cleaning and descriptive analysis.",
-      tags: ["MTF Framework", "CAPI", "5 Countries"]
+      tags: ["MTF Framework", "CAPI", "5 Countries"],
+      domains: ["Energy", "WASH"]
     }
   ];
+
+  const filteredProjects = activeFilter === "All"
+    ? otherProjects
+    : otherProjects.filter(p => p.domains.includes(activeFilter));
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-primary">
@@ -423,52 +440,85 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GIS Work Grid */}
-      <section className="py-24 px-6 md:px-24 bg-card/40 border-t border-border/50">
+      {/* GIS Work Grid — Filterable */}
+      <section className="py-24 px-6 md:px-24 border-t border-border/50" style={{ background: "hsl(214 36% 96%)" }}>
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeInUp} className="mb-14">
+          <motion.div {...fadeInUp} className="mb-10">
             <h3 className="text-2xl md:text-3xl font-bold mb-3">GIS & Research Work</h3>
             <p className="text-muted-foreground font-mono text-sm">Spatial analysis, machine learning, field surveys, and geospatial platform development.</p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {otherProjects.map((p, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="bg-background border border-border rounded-lg hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5 flex flex-col group overflow-hidden"
+          {/* Filter Buttons */}
+          <motion.div {...fadeInUp} className="flex flex-wrap gap-2 mb-10">
+            {FILTER_TAGS.map(tag => (
+              <button
+                key={tag}
+                onClick={() => setActiveFilter(tag)}
+                className="font-mono text-xs px-4 py-2 rounded-full border transition-all"
+                style={
+                  activeFilter === tag
+                    ? { background: "#00b4d8", color: "#fff", borderColor: "#00b4d8" }
+                    : { background: "#fff", color: "#64748b", borderColor: "#cbd5e1" }
+                }
               >
-                {"image" in p && p.image && (
-                  <div className="relative h-40 overflow-hidden border-b border-border/60">
-                    <img
-                      src={p.image as string}
-                      alt={p.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-                  </div>
+                {tag}
+                {tag !== "All" && (
+                  <span className="ml-1.5 opacity-60">
+                    {otherProjects.filter(p => p.domains.includes(tag)).length}
+                  </span>
                 )}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <div className="font-mono text-[10px] text-primary uppercase tracking-wide">{p.client}</div>
-                    <div className="font-mono text-[10px] text-muted-foreground shrink-0">{p.year}</div>
-                  </div>
-                  <h4 className="text-base font-bold mb-3 group-hover:text-primary transition-colors">{p.title}</h4>
-                  <p className="text-sm text-muted-foreground mb-6 flex-1 leading-relaxed">{p.desc}</p>
-                  <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
-                    {p.tags.map(t => (
-                      <span key={t} className="px-2 py-1 bg-card rounded text-muted-foreground border border-border/60">{t}</span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+              </button>
             ))}
+            <span className="font-mono text-xs text-muted-foreground self-center ml-2">
+              {filteredProjects.length} project{filteredProjects.length !== 1 ? "s" : ""}
+            </span>
           </motion.div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeFilter}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {filteredProjects.map((p, i) => (
+                <motion.div
+                  key={p.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="bg-card border border-border rounded-xl hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5 flex flex-col group overflow-hidden"
+                >
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <div className="flex flex-wrap gap-1">
+                        {p.domains.map(d => (
+                          <span
+                            key={d}
+                            className="font-mono text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wide"
+                            style={{ background: "rgba(0,180,216,0.1)", color: "#0891b2", border: "1px solid rgba(0,180,216,0.25)" }}
+                          >
+                            {d}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="font-mono text-[10px] text-muted-foreground shrink-0">{p.year}</div>
+                    </div>
+                    <div className="font-mono text-[10px] text-muted-foreground mb-2 uppercase tracking-wide">{p.client}</div>
+                    <h4 className="text-base font-bold mb-3 group-hover:text-primary transition-colors leading-snug">{p.title}</h4>
+                    <p className="text-sm text-muted-foreground mb-5 flex-1 leading-relaxed">{p.desc}</p>
+                    <div className="flex flex-wrap gap-1.5 font-mono text-[10px] pt-4 border-t border-border/50">
+                      {p.tags.map(t => (
+                        <span key={t} className="px-2 py-1 bg-background rounded text-muted-foreground border border-border/60">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 

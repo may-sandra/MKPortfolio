@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -49,14 +50,12 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
-
 :root {
-  /* Light page theme — dark navy headers/footers, white content */
-  --background: 0 0% 100%;            /* white */
+  /* Light page theme — dark navy headers/footers, layered content */
+  --background: 214 36% 96%;          /* very subtle cool blue-gray #eef2f8 */
   --foreground: 227 60% 18%;          /* dark navy text */
 
-  --card: 213 50% 97%;                /* very light blue-white */
+  --card: 0 0% 100%;                  /* pure white cards float above bg */
   --card-foreground: 227 60% 18%;
   --card-border: 213 30% 87%;
 
