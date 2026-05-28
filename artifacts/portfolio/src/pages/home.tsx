@@ -21,14 +21,6 @@ export default function Home() {
 
   const otherProjects = [
     {
-      title: "DREEM Impact Tracking Platform",
-      client: "Mott Foundation",
-      year: "2024–2025",
-      desc: "Built a multi-tab Power BI dashboard tracking fellows' contributions to local organisations, proposals submitted, technical assistance levels, and sector-level breakdowns. Covers 10 organisations across Kenya, Uganda, and Tanzania.",
-      tags: ["Power BI", "Kenya", "Uganda", "Tanzania"],
-      image: "/dreem-dashboard.png"
-    },
-    {
       title: "SDG 7.1.1 Energy Access Tracking",
       client: "University of Oxford / CCG",
       year: "2025–2026",
@@ -90,7 +82,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-primary">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 px-6 py-5 flex justify-between items-center backdrop-blur-md bg-background/70 border-b border-border/30">
-        <div className="font-mono text-sm font-bold tracking-widest uppercase text-primary">MK.</div>
+        <div className="font-mono text-sm font-bold tracking-widest uppercase text-primary">Mary Kisaka</div>
         <div className="flex gap-8 font-mono text-xs">
           <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a>
           <a href="#skills" className="text-muted-foreground hover:text-primary transition-colors">Skills</a>
@@ -210,16 +202,19 @@ export default function Home() {
       </section>
 
       {/* About / Overview strip */}
-      <section id="about" className="py-16 px-6 md:px-24 border-y border-border/40 bg-card/40">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section id="about" className="relative py-20 px-6 md:px-24 border-y border-border/40 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/nairobi-overview-bg.png" alt="Nairobi road network" className="w-full h-full object-cover opacity-12" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
-            { label: "Years Active", value: "4+" },
+            { label: "Years Experience", value: "4+" },
             { label: "Countries", value: "12+" },
-            { label: "Domains", value: "Energy · WASH · Climate" },
-            { label: "Current Role", value: "EED Advisory Ltd." }
+            { label: "Sectors", value: "Energy · WASH · Climate" }
           ].map(s => (
             <motion.div key={s.label} {...fadeInUp} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{s.value}</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{s.value}</div>
               <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">{s.label}</div>
             </motion.div>
           ))}
@@ -372,88 +367,49 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Project 3 — GEAPP DRC */}
+            {/* Project 3 — Mott Foundation DREEM */}
             <motion.div {...fadeInUp} className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden flex items-center justify-center p-8 group-hover:border-primary/40 transition-colors">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/6 to-transparent group-hover:from-primary/12 transition-colors duration-500" />
-                <div className="relative w-full h-full flex flex-col gap-4 p-2">
-                  <div className="font-mono text-[8px] text-primary/60 uppercase tracking-widest">DRC Electrification Access Coalition</div>
-                  <div className="flex-1 grid grid-cols-3 gap-3">
-                    {[
-                      { label: "Projects Tracked", val: "M300", color: "primary" },
-                      { label: "Partners", val: "6+", color: "secondary" },
-                      { label: "Compact", val: "M300", color: "primary" }
-                    ].map((s, i) => (
-                      <div key={i} className={`bg-${s.color}/10 border border-${s.color}/20 rounded-lg flex flex-col items-center justify-center gap-1 p-3`}>
-                        <div className={`font-mono text-lg font-bold text-${s.color}`}>{s.val}</div>
-                        <div className="font-mono text-[7px] text-muted-foreground text-center">{s.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex gap-2 items-center">
-                    {["GEAPP", "World Bank", "AfDB", "Rockefeller", "Power Africa"].map(p => (
-                      <div key={p} className="px-2 py-1 bg-primary/8 rounded text-[7px] font-mono text-primary/70">{p}</div>
-                    ))}
-                  </div>
-                </div>
+              <div className="lg:col-span-7 bg-card rounded-xl overflow-hidden border border-border group-hover:border-primary/40 transition-colors">
+                <img
+                  src="/dreem-dashboard.png"
+                  alt="DREEM Impact Tracking Platform — Mott Foundation dashboard"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: "4/3" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="lg:col-span-5 lg:-ml-12 z-10">
                 <div className="bg-background/95 backdrop-blur-md border border-border p-8 rounded-xl shadow-2xl group-hover:border-primary/30 transition-colors">
-                  <div className="font-mono text-xs text-primary mb-1 uppercase tracking-wider">GEAPP</div>
-                  <div className="font-mono text-[10px] text-muted-foreground mb-4">DRC · 2024–Present</div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Alliance for Electrification in DRC</h3>
+                  <div className="font-mono text-xs text-primary mb-1 uppercase tracking-wider">Mott Foundation</div>
+                  <div className="font-mono text-[10px] text-muted-foreground mb-4">Kenya · Uganda · Tanzania · 2024–2025</div>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">DREEM Impact Tracking Platform</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                    Supported acceleration of electricity access in DRC through deployment of metro-grid solutions. Coordinated among key stakeholders including GEAPP, World Bank, African Development Bank, Rockefeller Foundation, and Power Africa (USAID/USTDA). Managed alignment of programme content with the M300 Compact and Access Coalition Mechanism initiatives, ensuring consistent technical communication and reporting.
+                    Built and managed a multi-tab Power BI dashboard to track fellows' contributions to local organisations, monthly technical assistance levels, proposal development outcomes, and sector-level activity breakdowns. Covers 10 organisations across Kenya, Uganda, and Tanzania. Dashboard includes overview, project baseline, TA support, and SDGs tabs, enabling Mott Foundation to monitor programme impact in real time.
                   </p>
                   <div className="flex flex-wrap gap-2 font-mono text-[10px]">
-                    <span className="px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20">Project Coordination</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Stakeholder Engagement</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">DRC</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20">Power BI</span>
+                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Impact Tracking</span>
+                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">3 Countries</span>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Project 4 — Bayes/CIFF */}
-            <motion.div {...fadeInUp} className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 z-10 order-2 lg:order-1 lg:-mr-12">
-                <div className="bg-background/95 backdrop-blur-md border border-border p-8 rounded-xl shadow-2xl group-hover:border-secondary/30 transition-colors">
-                  <div className="font-mono text-xs text-secondary mb-1 uppercase tracking-wider">Bayes Consulting / CIFF</div>
-                  <div className="font-mono text-[10px] text-muted-foreground mb-4">Kenya · Uganda · Tanzania · Ethiopia · Malawi · 2025–Ongoing</div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-secondary transition-colors">E-Cooking & Carbon Finance for Sustainable Energy</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                    Programme targeting demand-side management and budget-neutral energy transition across five countries, leveraging carbon finance under Article 6 of the Paris Agreement. Role as Project Coordinator: overseeing fiscal impact assessments of electric cooking adoption, supporting simulation of electricity transition pathways, coordinating assessments of financing options for energy-efficient appliances, leading client interactions, and managing technical reporting across country teams.
-                  </p>
-                  <div className="flex flex-wrap gap-2 font-mono text-[10px]">
-                    <span className="px-2 py-1 bg-secondary/10 text-secondary rounded border border-secondary/20">Project Coordinator</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">5 Countries</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Energy Transition</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Carbon Finance</span>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden flex items-center justify-center p-8 order-1 lg:order-2 group-hover:border-secondary/40 transition-colors">
-                <div className="absolute inset-0 bg-gradient-to-tl from-secondary/6 to-transparent group-hover:from-secondary/12 transition-colors duration-500" />
-                <div className="relative w-full h-full flex flex-col justify-end gap-2 px-6 pt-6">
-                  <div className="font-mono text-[8px] text-secondary/60 uppercase">Electricity Transition Pathways — 5 Countries</div>
-                  <div className="flex items-end justify-between flex-1 gap-3 py-4">
-                    {[
-                      { label: "Kenya", h: 82, color: "primary" },
-                      { label: "Uganda", h: 65, color: "secondary" },
-                      { label: "Tanzania", h: 74, color: "primary" },
-                      { label: "Ethiopia", h: 58, color: "secondary" },
-                      { label: "Malawi", h: 48, color: "primary" }
-                    ].map(b => (
-                      <div key={b.label} className="flex-1 flex flex-col items-center gap-1">
-                        <div
-                          className={`w-full rounded-t`}
-                          style={{ height: `${b.h}%`, background: `hsl(${b.color === 'primary' ? '174 100% 50%' : '35 100% 62%'} / 0.35)`, border: `1px solid hsl(${b.color === 'primary' ? '174 100% 50%' : '35 100% 62%'} / 0.4)` }}
-                        />
-                        <div className="font-mono text-[7px] text-muted-foreground">{b.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="h-px bg-border mb-2" />
+            <motion.div {...fadeInUp} className="group">
+              <div className="bg-background/95 border border-border p-10 rounded-xl group-hover:border-secondary/40 transition-colors max-w-4xl">
+                <div className="font-mono text-xs text-secondary mb-1 uppercase tracking-wider">Bayes Consulting / CIFF</div>
+                <div className="font-mono text-[10px] text-muted-foreground mb-5">Kenya · Uganda · Tanzania · Ethiopia · Malawi · 2025–Ongoing</div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-5 group-hover:text-secondary transition-colors">E-Cooking & Carbon Finance for Sustainable Energy</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+                  Programme targeting demand-side management and budget-neutral energy transition across five countries, leveraging carbon finance under Article 6 of the Paris Agreement. Role as Project Coordinator: overseeing fiscal impact assessments of electric cooking adoption, supporting simulation of electricity transition pathways, coordinating assessments of financing options for energy-efficient appliances, leading client interactions, and managing technical reporting across country teams.
+                </p>
+                <div className="flex flex-wrap gap-2 font-mono text-[10px]">
+                  <span className="px-3 py-1.5 bg-secondary/10 text-secondary rounded border border-secondary/20">Project Coordinator</span>
+                  <span className="px-3 py-1.5 bg-card text-muted-foreground rounded border border-border">5 Countries</span>
+                  <span className="px-3 py-1.5 bg-card text-muted-foreground rounded border border-border">Energy Transition</span>
+                  <span className="px-3 py-1.5 bg-card text-muted-foreground rounded border border-border">Carbon Finance</span>
+                  <span className="px-3 py-1.5 bg-card text-muted-foreground rounded border border-border">Article 6 Paris Agreement</span>
                 </div>
               </div>
             </motion.div>
