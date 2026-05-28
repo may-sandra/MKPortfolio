@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "NqbvxOEQQShA5w8_s8B-0"
+uri = "file://artifacts/portfolio/public/hero-bg.png"
+type = "image"
+title = "Abstract satellite geospatial data visualization"
