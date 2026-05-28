@@ -52,59 +52,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --background: 222 22% 16%; /* Lighter slate-navy */
-  --foreground: 210 25% 97%;
+  /* Blue palette: #071a52 → #086bd1 → #00b4d8 → #90e0ef → #caf0f8 */
+  --background: 227 84% 17%;       /* #071a52 deep navy */
+  --foreground: 210 30% 97%;
 
-  --card: 222 22% 21%;
-  --card-foreground: 210 25% 97%;
-  --card-border: 222 20% 30%;
+  --card: 225 60% 22%;             /* slightly lighter navy */
+  --card-foreground: 210 30% 97%;
+  --card-border: 224 45% 30%;
 
-  --sidebar: 222 22% 21%;
-  --sidebar-foreground: 210 25% 97%;
-  --sidebar-border: 222 20% 30%;
-  --sidebar-primary: 174 100% 56%;
-  --sidebar-primary-foreground: 222 22% 16%;
-  --sidebar-accent: 222 22% 26%;
-  --sidebar-accent-foreground: 210 25% 97%;
-  --sidebar-ring: 174 100% 56%;
+  --sidebar: 225 60% 22%;
+  --sidebar-foreground: 210 30% 97%;
+  --sidebar-border: 224 45% 30%;
+  --sidebar-primary: 193 100% 42%;
+  --sidebar-primary-foreground: 227 84% 17%;
+  --sidebar-accent: 225 50% 27%;
+  --sidebar-accent-foreground: 210 30% 97%;
+  --sidebar-ring: 193 100% 42%;
 
-  --popover: 222 22% 21%;
-  --popover-foreground: 210 25% 97%;
-  --popover-border: 222 20% 30%;
+  --popover: 225 60% 22%;
+  --popover-foreground: 210 30% 97%;
+  --popover-border: 224 45% 30%;
 
-  --primary: 174 100% 56%; /* Vivid electric teal */
-  --primary-foreground: 222 22% 12%;
+  --primary: 193 100% 42%;         /* #00b4d8 vivid cyan */
+  --primary-foreground: 227 84% 10%;
 
-  --secondary: 35 100% 66%; /* Bright warm amber */
-  --secondary-foreground: 222 22% 12%;
+  --secondary: 211 94% 43%;        /* #086bd1 royal blue */
+  --secondary-foreground: 210 30% 97%;
 
-  --muted: 222 20% 26%;
-  --muted-foreground: 215 16% 76%;
+  --muted: 225 50% 27%;
+  --muted-foreground: 210 22% 75%;
 
-  --accent: 174 100% 56%;
-  --accent-foreground: 222 22% 12%;
+  --accent: 193 100% 42%;
+  --accent-foreground: 227 84% 10%;
 
   --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 25% 97%;
+  --destructive-foreground: 210 30% 97%;
 
-  --border: 222 20% 30%;
-  --input: 222 20% 30%;
-  --ring: 174 100% 56%;
-  
-  --chart-1: 174 100% 50%;
-  --chart-2: 35 100% 62%;
-  --chart-3: 210 30% 97%;
-  --chart-4: 215 18% 74%;
-  --chart-5: 220 35% 22%;
+  --border: 224 45% 30%;
+  --input: 224 45% 30%;
+  --ring: 193 100% 42%;
+
+  --chart-1: 193 100% 42%;
+  --chart-2: 211 94% 43%;
+  --chart-3: 193 75% 75%;
+  --chart-4: 210 22% 75%;
+  --chart-5: 224 45% 30%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
   --app-font-mono: Menlo, monospace;
-  --radius: 0.5rem; 
+  --radius: 0.5rem;
 
   --button-outline: rgba(255,255,255, .10);
   --badge-outline: rgba(255,255,255, .05);
-  --opaque-button-border-intensity: -8; 
+  --opaque-button-border-intensity: -8;
 
   --elevate-1: rgba(255,255,255, .05);
   --elevate-2: rgba(255,255,255, .10);
@@ -123,7 +124,7 @@
 }
 
 .dark {
-  /* Same as root, as we are defaulting to this dark space theme */
+  /* Same as root — defaulting to this dark blue theme */
 }
 
 @layer base {

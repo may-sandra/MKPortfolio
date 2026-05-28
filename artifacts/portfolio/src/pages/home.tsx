@@ -95,13 +95,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] flex flex-col justify-end px-6 md:px-24 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-background/75 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent z-20" />
           <img
             src="/hero-bg.png"
-            alt="Abstract geospatial satellite visualization of East Africa"
-            className="w-full h-full object-cover object-center opacity-55"
+            alt="Nairobi county road network GIS map"
+            className="w-full h-full object-cover object-center opacity-35"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/40 z-10" />
         </div>
 
         <div className="relative z-30 max-w-5xl">
@@ -309,9 +309,10 @@ export default function Home() {
                 <img
                   src="/unicef-wash.png"
                   alt="UNICEF WASH Vulnerability Monitoring System — Somalia dashboard screenshot"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: "center 22%" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
               </div>
               <div className="lg:col-span-5 lg:-ml-12 z-10">
                 <div className="bg-background/95 backdrop-blur-md border border-border p-8 rounded-xl shadow-2xl group-hover:border-primary/30 transition-colors">
@@ -361,7 +362,8 @@ export default function Home() {
                 <img
                   src="/ripples-platform.png"
                   alt="RIPPLES Integrated Energy Planning Data Platform screenshot"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: "left 15%" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
               </div>
@@ -369,14 +371,14 @@ export default function Home() {
 
             {/* Project 3 — Mott Foundation DREEM */}
             <motion.div {...fadeInUp} className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 bg-card rounded-xl overflow-hidden border border-border group-hover:border-primary/40 transition-colors">
+              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden group-hover:border-primary/40 transition-colors">
                 <img
                   src="/dreem-dashboard.png"
                   alt="DREEM Impact Tracking Platform — Mott Foundation dashboard"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: "4/3" }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: "center 8%" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
               </div>
               <div className="lg:col-span-5 lg:-ml-12 z-10">
                 <div className="bg-background/95 backdrop-blur-md border border-border p-8 rounded-xl shadow-2xl group-hover:border-primary/30 transition-colors">
