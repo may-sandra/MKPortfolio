@@ -52,7 +52,7 @@
 
 :root {
   /* Light page theme — dark navy headers/footers, layered content */
-  --background: 214 36% 96%;          /* very subtle cool blue-gray #eef2f8 */
+  --background: 214 28% 90%;          /* medium cool blue-gray — clearly visible against white cards */
   --foreground: 227 60% 18%;          /* dark navy text */
 
   --card: 0 0% 100%;                  /* pure white cards float above bg */

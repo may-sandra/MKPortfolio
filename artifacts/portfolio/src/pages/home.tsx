@@ -323,96 +323,96 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="space-y-24">
+          <div className="space-y-8">
             {/* Project 1 — UNICEF Somalia WASH */}
-            <motion.div {...fadeInUp} className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden group-hover:border-primary/40 transition-colors">
-                <img
-                  src="/unicef-wash.png"
-                  alt="UNICEF WASH Vulnerability Monitoring System — Somalia dashboard screenshot"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  style={{ objectPosition: "center 22%" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
-              </div>
-              <div className="lg:col-span-5 lg:-ml-12 z-10">
-                <div className="bg-background/95 backdrop-blur-md border border-border p-8 rounded-xl shadow-2xl group-hover:border-primary/30 transition-colors">
-                  <div className="font-mono text-xs text-primary mb-1 uppercase tracking-wider">UNICEF</div>
+            <motion.div {...fadeInUp} className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-5 relative overflow-hidden" style={{ minHeight: "260px", maxHeight: "320px" }}>
+                  <img
+                    src="/unicef-wash.png"
+                    alt="UNICEF WASH Vulnerability Monitoring System — Somalia dashboard screenshot"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    style={{ objectPosition: "center 22%" }}
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, transparent 70%, white)" }} />
+                </div>
+                <div className="lg:col-span-7 p-8 flex flex-col justify-center">
+                  <div className="font-mono text-xs mb-1 uppercase tracking-wider" style={{ color: "#00b4d8" }}>UNICEF</div>
                   <div className="font-mono text-[10px] text-muted-foreground mb-4">Somalia · 2023–2024</div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">WASH Needs Assessment — Somalia</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                    Nationwide household WASH security assessment across Somalia. Developed WASH severity indices tailored to the Somali context to identify People in Need (PiN). Created spatial visualization maps and built a Power BI online dashboard for spatial and temporal needs indication, informing UNICEF and WASH cluster partners' humanitarian response.
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">WASH Needs Assessment — Somalia</h3>
+                  <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
+                    Nationwide household WASH security assessment across Somalia. Developed WASH severity indices to identify People in Need (PiN). Built a Power BI online dashboard for spatial and temporal needs indication, informing UNICEF and WASH cluster partners' humanitarian response.
                   </p>
-                  <div className="flex flex-wrap gap-2 font-mono text-[10px]">
-                    <span className="px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20">Severity Indices</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Power BI</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Spatial Analysis</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Humanitarian</span>
+                  <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                    <span className="px-2 py-1 rounded border" style={{ background: "rgba(0,180,216,0.1)", color: "#0891b2", borderColor: "rgba(0,180,216,0.25)" }}>Severity Indices</span>
+                    <span className="px-2 py-1 bg-background text-muted-foreground rounded border border-border">Power BI</span>
+                    <span className="px-2 py-1 bg-background text-muted-foreground rounded border border-border">Spatial Analysis</span>
+                    <span className="px-2 py-1 bg-background text-muted-foreground rounded border border-border">Humanitarian</span>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Project 2 — RIPPLES */}
-            <motion.div {...fadeInUp} className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 z-10 order-2 lg:order-1 lg:-mr-12">
-                <div className="bg-background/95 backdrop-blur-md border border-border p-8 rounded-xl shadow-2xl group-hover:border-secondary/30 transition-colors">
+            <motion.div {...fadeInUp} className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-secondary/40 hover:shadow-xl hover:shadow-secondary/5 transition-all">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-7 p-8 flex flex-col justify-center order-2 lg:order-1">
                   <div className="font-mono text-xs text-secondary mb-1 uppercase tracking-wider">UCL / Climate Compatible Growth</div>
                   <div className="font-mono text-[10px] text-muted-foreground mb-4">Kenya · Ongoing</div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-secondary transition-colors">RIPPLES — Energy Systems Planning Platform</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                    Designed and developed a web-based platform to visualise and communicate minimum data requirements for Kenya's Integrated National Energy Plan (INEP) and County Energy Plans (CEPs). Conducted literature reviews informing energy systems planning approaches, supported stakeholder engagement, and contributed to technical reporting and deliverables. Role: GIS Developer.
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">RIPPLES — Energy Systems Planning Platform</h3>
+                  <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
+                    Designed and developed a web-based platform to visualise and communicate minimum data requirements for Kenya's Integrated National Energy Plan (INEP) and County Energy Plans (CEPs). Conducted literature reviews, supported stakeholder engagement, and contributed to technical reporting. Role: GIS Developer.
                   </p>
-                  <div className="flex flex-wrap gap-2 font-mono text-[10px] mb-5">
+                  <div className="flex flex-wrap gap-1.5 font-mono text-[10px] mb-4">
                     <span className="px-2 py-1 bg-secondary/10 text-secondary rounded border border-secondary/20">GIS Developer</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Web Platform</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Energy Planning</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Kenya</span>
+                    <span className="px-2 py-1 bg-background text-muted-foreground rounded border border-border">Web Platform</span>
+                    <span className="px-2 py-1 bg-background text-muted-foreground rounded border border-border">Energy Planning</span>
+                    <span className="px-2 py-1 bg-background text-muted-foreground rounded border border-border">Kenya</span>
                   </div>
                   <a
                     href="https://energyatlas.africa/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-mono text-xs text-secondary hover:text-secondary/80 transition-colors border border-secondary/30 px-4 py-2 rounded hover:border-secondary/60"
+                    className="inline-flex items-center gap-2 font-mono text-xs text-secondary hover:text-secondary/80 transition-colors border border-secondary/30 px-4 py-2 rounded hover:border-secondary/60 self-start"
                   >
                     <Globe2 className="w-3.5 h-3.5" /> View Live Platform →
                   </a>
                 </div>
-              </div>
-              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden order-1 lg:order-2 group-hover:border-secondary/40 transition-colors">
-                <img
-                  src="/ripples-platform.png"
-                  alt="RIPPLES Integrated Energy Planning Data Platform screenshot"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  style={{ objectPosition: "left 15%" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+                <div className="lg:col-span-5 relative overflow-hidden order-1 lg:order-2" style={{ minHeight: "260px", maxHeight: "320px" }}>
+                  <img
+                    src="/ripples-platform.png"
+                    alt="RIPPLES Integrated Energy Planning Data Platform screenshot"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    style={{ objectPosition: "left 15%" }}
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to left, transparent 70%, white)" }} />
+                </div>
               </div>
             </motion.div>
 
             {/* Project 3 — Mott Foundation DREEM */}
-            <motion.div {...fadeInUp} className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 bg-card rounded-xl aspect-[4/3] border border-border relative overflow-hidden group-hover:border-primary/40 transition-colors">
-                <img
-                  src="/dreem-dashboard.png"
-                  alt="DREEM Impact Tracking Platform — Mott Foundation dashboard"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  style={{ objectPosition: "center 8%" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
-              </div>
-              <div className="lg:col-span-5 lg:-ml-12 z-10">
-                <div className="bg-background/95 backdrop-blur-md border border-border p-8 rounded-xl shadow-2xl group-hover:border-primary/30 transition-colors">
-                  <div className="font-mono text-xs text-primary mb-1 uppercase tracking-wider">Mott Foundation</div>
+            <motion.div {...fadeInUp} className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-5 relative overflow-hidden" style={{ minHeight: "260px", maxHeight: "320px" }}>
+                  <img
+                    src="/dreem-dashboard.png"
+                    alt="DREEM Impact Tracking Platform — Mott Foundation dashboard"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    style={{ objectPosition: "center 8%" }}
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, transparent 70%, white)" }} />
+                </div>
+                <div className="lg:col-span-7 p-8 flex flex-col justify-center">
+                  <div className="font-mono text-xs mb-1 uppercase tracking-wider" style={{ color: "#00b4d8" }}>Mott Foundation</div>
                   <div className="font-mono text-[10px] text-muted-foreground mb-4">Kenya · Uganda · Tanzania · 2024–2025</div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">DREEM Impact Tracking Platform</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                    Built and managed a multi-tab Power BI dashboard to track fellows' contributions to local organisations, monthly technical assistance levels, proposal development outcomes, and sector-level activity breakdowns. Covers 10 organisations across Kenya, Uganda, and Tanzania. Dashboard includes overview, project baseline, TA support, and SDGs tabs, enabling Mott Foundation to monitor programme impact in real time.
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">DREEM Impact Tracking Platform</h3>
+                  <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
+                    Built and managed a multi-tab Power BI dashboard to track fellows' contributions to local organisations, monthly technical assistance levels, and proposal development outcomes. Covers 10 organisations across Kenya, Uganda, and Tanzania — enabling Mott Foundation to monitor programme impact in real time.
                   </p>
-                  <div className="flex flex-wrap gap-2 font-mono text-[10px]">
-                    <span className="px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20">Power BI</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">Impact Tracking</span>
-                    <span className="px-2 py-1 bg-card text-muted-foreground rounded">3 Countries</span>
+                  <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                    <span className="px-2 py-1 rounded border" style={{ background: "rgba(0,180,216,0.1)", color: "#0891b2", borderColor: "rgba(0,180,216,0.25)" }}>Power BI</span>
+                    <span className="px-2 py-1 bg-background text-muted-foreground rounded border border-border">Impact Tracking</span>
+                    <span className="px-2 py-1 bg-background text-muted-foreground rounded border border-border">3 Countries</span>
                   </div>
                 </div>
               </div>
