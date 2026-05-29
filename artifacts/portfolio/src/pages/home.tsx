@@ -116,6 +116,9 @@ export default function Home() {
             src="/hero-bg.png"
             alt="Nairobi county road network GIS map"
             className="w-full h-full object-cover object-center opacity-70"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
           {/* Only fade at the very bottom so text stays readable, let the map breathe everywhere else */}
           <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(to top, hsl(227 84% 17%) 15%, hsl(227 84% 17% / 0.35) 50%, transparent 100%)" }} />
@@ -139,9 +142,9 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-8xl font-bold tracking-tight mb-6 leading-[1.08] text-white"
           >
-            Mapping the <br />
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(to right, #00b4d8, #90e0ef, #086bd1)" }}>Energy Transition</span><br />
-            Across Africa.
+            Built on Code,<br />
+            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(to right, #00b4d8, #90e0ef, #086bd1)" }}>Maps,</span> and<br />
+            Evidence.
           </motion.h1>
 
           <motion.p
@@ -226,7 +229,7 @@ export default function Home() {
       {/* About / Overview strip */}
       <section id="about" className="relative py-20 px-6 md:px-24 overflow-hidden" style={{ background: "hsl(227 84% 14%)" }}>
         <div className="absolute inset-0 z-0">
-          <img src="/nairobi-overview-bg.png" alt="Nairobi road network" className="w-full h-full object-cover opacity-30" />
+          <img src="/nairobi-overview-bg.png" alt="Nairobi road network" className="w-full h-full object-cover opacity-30" loading="eager" decoding="async" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(227 84% 14% / 0.7), hsl(227 84% 14% / 0.4), hsl(227 84% 14% / 0.7))" }} />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -332,8 +335,10 @@ export default function Home() {
                   <img
                     src="/unicef-wash.png"
                     alt="UNICEF WASH Vulnerability Monitoring System — Somalia dashboard screenshot"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     style={{ objectPosition: "center 22%" }}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to right, transparent 70%, white)" }} />
                 </div>
@@ -383,8 +388,10 @@ export default function Home() {
                   <img
                     src="/ripples-platform.png"
                     alt="RIPPLES Integrated Energy Planning Data Platform screenshot"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     style={{ objectPosition: "left 15%" }}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to left, transparent 70%, white)" }} />
                 </div>
@@ -398,8 +405,10 @@ export default function Home() {
                   <img
                     src="/dreem-dashboard.png"
                     alt="DREEM Impact Tracking Platform — Mott Foundation dashboard"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     style={{ objectPosition: "center 8%" }}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to right, transparent 70%, white)" }} />
                 </div>
