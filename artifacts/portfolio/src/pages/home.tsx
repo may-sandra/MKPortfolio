@@ -454,7 +454,7 @@ export default function Home() {
       <section className="py-24 px-6 md:px-24 border-t border-border/50" style={{ background: "hsl(214 36% 96%)" }}>
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeInUp} className="mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">GIS & Research Work</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">Other featured projects</h3>
             <p className="text-muted-foreground font-mono text-sm">Spatial analysis, machine learning, field surveys, and geospatial platform development.</p>
           </motion.div>
 
