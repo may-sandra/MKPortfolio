@@ -233,9 +233,9 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {[
               { name: "UNICEF", sub: "Somalia WASH" },
-              { name: "World Bank", sub: "Rwanda" },
+              { name: "The World Bank", sub: "Rwanda" },
               { name: "Mott Foundation", sub: "DREEM" },
-              { name: "Bayes Impact", sub: "Kenya" },
+              { name: "Bayes Consulting", sub: "Kenya" },
               { name: "African Dev. Bank", sub: "Malawi" },
               { name: "Oxford / CCG", sub: "SDG 7.1.1" },
               { name: "Aqua for All", sub: "Climate WASH" },
@@ -260,7 +260,7 @@ export default function Home() {
           {[
             { label: "Years Experience", value: "4+" },
             { label: "Countries", value: "12+" },
-            { label: "Sectors", value: "Energy · WASH · Climate" }
+            { label: "Sectors", value: "Geospatial·Energy · WASH · Climate" }
           ].map(s => (
             <motion.div key={s.label} {...fadeInUp} className="text-center">
               <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#00b4d8" }}>{s.value}</div>
@@ -358,7 +358,7 @@ export default function Home() {
                 <div className="lg:col-span-5 relative overflow-hidden" style={{ minHeight: "260px", maxHeight: "320px" }}>
                   <img
                     src="/unicef-wash.png"
-                    alt="UNICEF WASH Vulnerability Monitoring System — Somalia dashboard screenshot"
+                    alt="UNICEF WASH Needs Assessment — Somalia dashboard screenshot"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     style={{ objectPosition: "center 22%" }}
                     loading="lazy"
@@ -389,7 +389,7 @@ export default function Home() {
                 <div className="lg:col-span-7 p-8 flex flex-col justify-center order-2 lg:order-1">
                   <div className="font-mono text-xs text-secondary mb-1 uppercase tracking-wider">UCL / Climate Compatible Growth</div>
                   <div className="font-mono text-[10px] text-muted-foreground mb-4">Kenya · Ongoing</div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">RIPPLES — Energy Systems Planning Platform</h3>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">RIPPLES — INEP Platform</h3>
                   <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
                     Designed and developed a web-based platform to visualise and communicate minimum data requirements for Kenya's Integrated National Energy Plan (INEP) and County Energy Plans (CEPs). Conducted literature reviews, supported stakeholder engagement, and contributed to technical reporting. Role: GIS Developer.
                   </p>
@@ -441,7 +441,7 @@ export default function Home() {
                   <div className="font-mono text-[10px] text-muted-foreground mb-4">Kenya · Uganda · Tanzania · 2024–2025</div>
                   <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">DREEM Impact Tracking Platform</h3>
                   <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
-                    Built and managed a multi-tab Power BI dashboard to track fellows' contributions to local organisations, monthly technical assistance levels, and proposal development outcomes. Covers 10 organisations across Kenya, Uganda, and Tanzania — enabling Mott Foundation to monitor programme impact in real time.
+                    Built and managed a multi-tab Power BI dashboard to track fellows' contributions to local organisations, Impact to organisations,monthly technical assistance levels, and proposal development outcomes. Covers 10 organisations across Kenya, Uganda, and Tanzania — enabling Mott Foundation to monitor programme impact in real time.
                   </p>
                   <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
                     <span className="px-2 py-1 rounded border" style={{ background: "rgba(0,180,216,0.1)", color: "#0891b2", borderColor: "rgba(0,180,216,0.25)" }}>Power BI</span>
@@ -457,7 +457,7 @@ export default function Home() {
               <div className="bg-background/95 border border-border p-10 rounded-xl group-hover:border-secondary/40 transition-colors max-w-4xl">
                 <div className="font-mono text-xs text-secondary mb-1 uppercase tracking-wider">Bayes Consulting / CIFF</div>
                 <div className="font-mono text-[10px] text-muted-foreground mb-5">Kenya · Uganda · Tanzania · Ethiopia · Malawi · 2025–Ongoing</div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-5 group-hover:text-secondary transition-colors">E-Cooking & Carbon Finance for Sustainable Energy</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-5 group-hover:text-secondary transition-colors">Pathways to Budget-Neutral Energy Transition</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl">
                   Programme targeting demand-side management and budget-neutral energy transition across five countries, leveraging carbon finance under Article 6 of the Paris Agreement. Role as Project Coordinator: overseeing fiscal impact assessments of electric cooking adoption, supporting simulation of electricity transition pathways, coordinating assessments of financing options for energy-efficient appliances, leading client interactions, and managing technical reporting across country teams.
                 </p>
@@ -584,7 +584,7 @@ export default function Home() {
               </div>
               <div className="relative">
                 <div className="absolute w-3 h-3 bg-border rounded-full -left-[38px] top-1.5 ring-4 ring-background" />
-                <h4 className="text-lg font-bold">Intern — GIS & Surveying</h4>
+                <h4 className="text-lg font-bold">Intern — GIS and Facility Database Management</h4>
                 <div className="text-muted-foreground font-mono text-sm mb-2">Kenya Power and Lighting Company (KPLC)</div>
                 <div className="text-muted-foreground text-sm font-mono">Aug 2019 – Nov 2019</div>
               </div>
