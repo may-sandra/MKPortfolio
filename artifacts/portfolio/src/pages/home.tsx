@@ -34,19 +34,19 @@ export default function Home() {
       domains: ["Energy"]
     },
     {
-      title: "AIRTEA Mobile GIS Crop Diagnostics",
-      client: "FARA / Kenyatta University",
-      year: "2022–2023",
-      desc: "Developed CNN-based image recognition algorithms for land use/land cover monitoring, volumetric soil moisture using SAR (Sentinel-1), and urban heat assessment using Google Earth Engine Python and JavaScript APIs. Built a mobile GIS application for crop diagnostics.",
-      tags: ["CNN", "Sentinel-1 SAR", "GEE", "Machine Learning"],
-      domains: ["Geospatial", "Climate Change"]
+      title: "Rwanda Solar Home Systems Assessment",
+      client: "The World Bank Group",
+      year: "2024–2025",
+      desc: "GIS database preparation and sampling strategy design for a Solar Home Systems (SHS) market assessment in Rwanda. Prepared geospatial databases of electrification zones, designed CAPI survey instruments, and conducted spatial analysis of off-grid market penetration and SHS adoption rates across provinces to inform World Bank energy access programming.",
+      tags: ["SHS", "Rwanda", "CAPI", "Off-grid"],
+      domains: ["Energy", "Geospatial"]
     },
     {
-      title: "Electricity Demand Estimation — ML",
-      client: "EED Advisory (Internal)",
-      year: "2023",
-      desc: "Spatial methodology for electricity demand estimation using Random Forest regression in Google Earth Engine, integrating global electrification data, population density, and LULC data. Benchmarked against ONSSET tool results.",
-      tags: ["Random Forest", "GEE", "Kenya"],
+      title: "Lesotho Energy Access Geospatial Analysis",
+      client: "EED Advisory",
+      year: "2024",
+      desc: "Spatial analysis and mapping to support energy access planning in Lesotho. Developed population-weighted electrification rate estimates, produced thematic maps of energy poverty hotspots, and supported the design of least-cost electrification strategies integrating grid extension and off-grid solar options using geospatial datasets and GIS modelling tools.",
+      tags: ["Least-Cost Planning", "Off-grid Solar", "Lesotho"],
       domains: ["Energy", "Geospatial"]
     },
     {
@@ -149,7 +149,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl max-w-2xl font-light mb-6 text-white/70"
           >
-            I am <strong className="text-white font-semibold">Mary Kisaka</strong> — a GIS developer who writes code as fluently as she reads satellite imagery. I build the platforms and spatial tools that governments and international organisations use to track electrification, model climate risk, and drive evidence-based decisions across Sub-Saharan Africa.
+            I am <strong className="text-white font-semibold">Mary Kisaka</strong> — a GIS developer who writes code as fluently as she interprets satellite imagery. I design spatial platforms and geospatial tools that support governments and international organisations in making evidence-based decisions across Sub-Saharan Africa. My work spans energy systems modelling, WASH, remote sensing analysis and cartography, climate risk assessment, data collection and analysis, and the development of digital solutions for sustainable development. I also prepare technical and financial proposals for projects and write reports.
           </motion.p>
 
           {/* Domain tags */}
