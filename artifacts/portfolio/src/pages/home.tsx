@@ -235,7 +235,7 @@ export default function Home() {
               { name: "UNICEF", sub: "Somalia WASH" },
               { name: "World Bank", sub: "Rwanda" },
               { name: "Mott Foundation", sub: "DREEM" },
-              { name: "Bayes Impact", sub: "France" },
+              { name: "Bayes Impact", sub: "Kenya" },
               { name: "African Dev. Bank", sub: "Malawi" },
               { name: "Oxford / CCG", sub: "SDG 7.1.1" },
               { name: "Aqua for All", sub: "Climate WASH" },
