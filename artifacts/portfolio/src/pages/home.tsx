@@ -42,12 +42,12 @@ export default function Home() {
       domains: ["Energy", "Geospatial"]
     },
     {
-      title: "Lesotho Energy Access Geospatial Analysis",
+      title: "Power System Readiness for VRE Integration — Publications Analysis",
       client: "EED Advisory",
       year: "2024",
-      desc: "Spatial analysis and mapping to support energy access planning in Lesotho. Developed population-weighted electrification rate estimates, produced thematic maps of energy poverty hotspots, and supported the design of least-cost electrification strategies integrating grid extension and off-grid solar options using geospatial datasets and GIS modelling tools.",
-      tags: ["Least-Cost Planning", "Off-grid Solar", "Lesotho"],
-      domains: ["Energy", "Geospatial"]
+      desc: "Conducted a systematic analysis of publications and reports on power system readiness for integration of Variable Renewable Energies (VRE) across Sub-Saharan Africa. Synthesised technical literature on grid flexibility, storage, and regulatory frameworks to identify barriers and enablers for VRE scale-up, producing a structured evidence base to inform energy planning and policy recommendations.",
+      tags: ["VRE Integration", "Power Systems", "Literature Review", "Energy Policy"],
+      domains: ["Energy", "Climate Change"]
     },
     {
       title: "Malawi National Clean Cooking Strategy",
