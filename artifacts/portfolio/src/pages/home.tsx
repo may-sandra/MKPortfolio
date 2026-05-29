@@ -226,6 +226,30 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Partners / Clients Strip */}
+      <section className="py-6 px-6 md:px-24 border-y overflow-hidden" style={{ background: "hsl(227 84% 12%)", borderColor: "hsl(227 84% 22%)" }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="text-center font-mono text-xs uppercase tracking-widest mb-5" style={{ color: "hsl(227 50% 55%)" }}>Selected clients & partners</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            {[
+              { name: "UNICEF", sub: "Somalia WASH" },
+              { name: "World Bank", sub: "Rwanda" },
+              { name: "Mott Foundation", sub: "DREEM" },
+              { name: "Bayes Impact", sub: "France" },
+              { name: "African Dev. Bank", sub: "Malawi" },
+              { name: "Oxford / CCG", sub: "SDG 7.1.1" },
+              { name: "Aqua for All", sub: "Climate WASH" },
+              { name: "FUNAE", sub: "Mozambique" },
+            ].map((p) => (
+              <div key={p.name} className="flex flex-col items-center text-center select-none">
+                <span className="font-bold text-sm tracking-wide text-white/80 whitespace-nowrap">{p.name}</span>
+                <span className="font-mono text-xs mt-0.5 whitespace-nowrap" style={{ color: "hsl(227 50% 55%)" }}>{p.sub}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About / Overview strip */}
       <section id="about" className="relative py-20 px-6 md:px-24 overflow-hidden" style={{ background: "hsl(227 84% 14%)" }}>
         <div className="absolute inset-0 z-0">
