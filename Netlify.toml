@@ -1,9 +1,0 @@
-[build]
-  base = "artifacts/portfolio"
-  command = "npm install -g pnpm && pnpm install --filter @workspace/portfolio... && pnpm --filter @workspace/portfolio run build"
-  publish = "dist/public"
- 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
