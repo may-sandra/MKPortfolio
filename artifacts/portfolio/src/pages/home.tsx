@@ -115,10 +115,11 @@ export default function Home() {
           <img
             src="/hero-bg.png"
             alt="Nairobi county road network GIS map"
-            className="w-full h-full object-cover object-center opacity-50"
+            className="w-full h-full object-cover object-center opacity-70"
           />
-          <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(to top, hsl(227 84% 17%) 20%, hsl(227 84% 17% / 0.5) 60%, hsl(227 84% 17% / 0.15) 100%)" }} />
-          <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(to right, hsl(227 84% 17% / 0.85) 0%, transparent 60%)" }} />
+          {/* Only fade at the very bottom so text stays readable, let the map breathe everywhere else */}
+          <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(to top, hsl(227 84% 17%) 15%, hsl(227 84% 17% / 0.35) 50%, transparent 100%)" }} />
+          <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(to right, hsl(227 84% 17% / 0.6) 0%, transparent 45%)" }} />
         </div>
 
         <div className="relative z-30 max-w-5xl">
@@ -223,10 +224,10 @@ export default function Home() {
       </section>
 
       {/* About / Overview strip */}
-      <section id="about" className="relative py-20 px-6 md:px-24 border-y border-border/40 overflow-hidden">
+      <section id="about" className="relative py-20 px-6 md:px-24 overflow-hidden" style={{ background: "hsl(227 84% 14%)" }}>
         <div className="absolute inset-0 z-0">
-          <img src="/nairobi-overview-bg.png" alt="Nairobi road network" className="w-full h-full object-cover opacity-12" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90" />
+          <img src="/nairobi-overview-bg.png" alt="Nairobi road network" className="w-full h-full object-cover opacity-30" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(227 84% 14% / 0.7), hsl(227 84% 14% / 0.4), hsl(227 84% 14% / 0.7))" }} />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
@@ -235,8 +236,8 @@ export default function Home() {
             { label: "Sectors", value: "Energy · WASH · Climate" }
           ].map(s => (
             <motion.div key={s.label} {...fadeInUp} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{s.value}</div>
-              <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">{s.label}</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#00b4d8" }}>{s.value}</div>
+              <div className="font-mono text-xs uppercase tracking-wider text-white/50">{s.label}</div>
             </motion.div>
           ))}
         </div>
